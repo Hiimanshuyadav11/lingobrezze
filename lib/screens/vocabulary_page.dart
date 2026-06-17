@@ -54,7 +54,13 @@ void initState() {
 
       void showAddWordSheet() {
     showModalBottomSheet(
-      context: context,
+  context: context,
+  isScrollControlled: true,
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.vertical(
+      top: Radius.circular(25),
+    ),
+  ),
       builder: (context) {
         return Padding(padding: const EdgeInsetsGeometry.all(20),
         child: Column(
@@ -196,12 +202,43 @@ if (errorMessage != null) {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Vocabulary'),
-        centerTitle: true,
+       elevation: 0,
+  backgroundColor: Colors.transparent,
+
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.vertical(
+      bottom: Radius.circular(30),
+    ),
+  ),
+
+  flexibleSpace: ClipRRect(
+    borderRadius: const BorderRadius.vertical(
+      bottom: Radius.circular(20),
+    ),
+    child: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 74, 77, 162),
+            Color.fromARGB(255, 89, 64, 148),
+          ],
+        ),
       ),
-        floatingActionButton: FloatingActionButton(
+    ),
+  ),
+  title: const Text(
+    'My Vocabulary',
+    style: TextStyle(fontWeight: FontWeight.bold),
+  ),
+  centerTitle: true,
+ 
+),
+
+
+        floatingActionButton: FloatingActionButton.extended(
     onPressed: showAddWordSheet,
-    child: const Icon(Icons.add),
+    icon: const Icon(Icons.add),
+    label: const Text("Add Word")
   ),
       body: words.isEmpty 
       ?  Center(
@@ -210,8 +247,18 @@ if (errorMessage != null) {
           child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.menu_book_rounded,
-              size: 100, color: Color.fromARGB(255, 45, 41, 41),),
+              Container(
+  padding: const EdgeInsets.all(25),
+  decoration: BoxDecoration(
+    color: Colors.indigo.shade50,
+    shape: BoxShape.circle,
+  ),
+  child: const Icon(
+    Icons.menu_book_rounded,
+    size: 80,
+    color: Color(0xFF6366F1),
+  ),
+),
 
               const SizedBox(height: 20,),
               const Text("You haven't saved any words yet",
@@ -232,7 +279,9 @@ if (errorMessage != null) {
           )
       )
 
-      : RefreshIndicator(
+      : Padding(
+    padding: const EdgeInsets.only(top: 17),
+    child: RefreshIndicator(
     onRefresh: fetchWords,
     child
       : ListView.builder(
@@ -241,14 +290,17 @@ if (errorMessage != null) {
       final word = words[index];
 
       return Card(
+        color: Colors.white,
   margin: const EdgeInsets.symmetric(
     horizontal: 16,
-    vertical: 8,
+    vertical: 10,
   ),
-  elevation: 3,
+  elevation: 6,
+  shadowColor: Colors.black26,
   shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(16),
+    borderRadius: BorderRadius.circular(20),
   ),
+  
   child: Padding(
     padding: const EdgeInsets.all(16),
     child: Column(
@@ -290,8 +342,10 @@ if (errorMessage != null) {
 );
     },
   ),
-    ), );
+    ), ), ) ;
   }
+
+  
  
 
   List<WordModel> words = [];
