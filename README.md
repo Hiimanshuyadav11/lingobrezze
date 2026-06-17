@@ -196,10 +196,10 @@ AI-assisted tools were used during development for guidance, debugging, implemen
 The final application architecture, feature integration, testing, and overall implementation decisions were reviewed and completed manually.
 
 Estimated Contribution
-UI Development & Refinement: 70%
-Backend API Development: 60%
-Firebase Integration Support: 50%
-Architecture, Feature Integration & Testing: Manual
+* UI Development & Refinement: 40%
+* Backend API Development: 60%
+* Firebase Integration Support: 40%
+* Architecture, Feature Integration & Testing: Manual
 
 AI tools used:
 
