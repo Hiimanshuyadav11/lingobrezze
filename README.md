@@ -191,14 +191,22 @@ Reusable widgets and Flutter best practices were used where possible within the 
 
 ## AI Usage
 
-AI tools were used during development to accelerate implementation and debugging.
+AI-assisted tools were used during development for guidance, debugging, implementation suggestions, and productivity improvements.
 
-Estimated contribution:
+The final application architecture, feature integration, testing, and overall implementation decisions were reviewed and completed manually.
 
-* UI: 70%
-* Backend: 60%
-* Firebase Integration: 50%
-* Architecture & Final Integration: Manual
+Estimated Contribution
+UI Development & Refinement: 70%
+Backend API Development: 60%
+Firebase Integration Support: 50%
+Architecture, Feature Integration & Testing: Manual
+
+AI tools used:
+
+ChatGPT
+GitHub Copilot
+Firebase Documentation
+Flutter Documentation
 
 ---
 
