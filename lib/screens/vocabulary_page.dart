@@ -288,6 +288,10 @@ class _VocabularyPageState extends State<VocabularyPage> {
   }
 
   void showAddWordSheet() {
+    wordController.clear();
+    meaningController.clear();
+    translationController.clear();
+
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
